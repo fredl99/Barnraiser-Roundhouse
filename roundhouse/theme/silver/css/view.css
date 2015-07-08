@@ -1,0 +1,103 @@
+/*
+// -----------------------------------------------------------------------
+// This file is part of Roundhouse
+// 
+// Copyright (C) 2003-2008 Barnraiser
+// http://www.barnraiser.org/
+// info@barnraiser.org
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program; see the file COPYING.txt.  If not, see
+// <http://www.gnu.org/licenses/>
+// -----------------------------------------------------------------------
+*/
+
+@media print {
+	body { width: 100%; }
+	#col_right { display: none; }
+	#col_left { float: none; width: 100%; }
+	#header_container ul { display: none; }
+}
+
+@media screen {
+	#col_left { float:left; display: inline; width: 528px; }
+	#col_right { float:left; width: 220px;  margin-left:30px; }
+
+	#col_left .box_header h1 { margin-bottom: 20px; }
+
+	#box_blog .body { overflow-x: auto; }
+	
+	#box_archive .box_body ul { max-height: 200px; overflow-y: auto; }
+	#box_highlights .box_body ul { max-height: 200px; overflow-y: auto; }
+}
+
+@media screen,print {
+	
+	#col_left .box  { border-width: 0px; }
+	#col_left .box_header h1 { font-size: 1.2em; }
+	#col_right .box_body { font-size: 0.8em; }
+
+	#box_blog ul { list-style-type: none; margin-left: 0px; } 
+	#box_blog li { margin-bottom: 30px; padding-bottom: 20px; }
+	#box_blog li .header { font-family: Georgia; font-size: 1.2em; font-weight: lighter; color: #666; font-style: italic; margin-top: 0px; margin-bottom: 16px; }
+	#box_blog li .body { padding-bottom: 16px; margin-bottom: 4px; border-bottom: 1px dotted #ccc; }
+	#box_blog li .footer { font-size: 0.76em; }
+	#box_blog li .footer ul { list-style-type: none; margin-left: 0px; }
+	#box_blog li .footer li { display: inline; }
+	#box_blog .body h1 { margin-bottom: 2px; }
+	#box_blog .body h2 { margin-bottom: 2px; }
+	#box_blog .body h3 { margin-bottom: 2px; }
+	#box_blog .body h4 { margin-bottom: 2px; }
+	#box_blog .body h5 { margin-bottom: 2px; }
+	#box_blog .body h6 { margin-bottom: 2px; }
+
+	.tagsize5 { font-size: 1.5em; }
+	.tagsize4 { font-size: 1.4em; }
+	.tagsize3 { font-size: 1.3em; }
+	.tagsize2 { font-size: 1.1em; }
+
+	#box_profile .avatar { text-align: center; }
+
+	#box_contact { display: none; }
+	#box_contact textarea { width: 335px; height: 4em; }
+	#box_contact input[type="text"] { width: 335px; }
+	#box_contact label { float: left; width: 110px; margin-right: 25px; }
+
+	.share_button, .comment_button, .permalink_button { color: #9a35f5; text-decoration: none; cursor: pointer; }
+	.share_button:hover, .comment_button:hover, .permalink_button:hover { color: #f61646; }
+
+	.share { text-align: center; font-size: 0.76em; margin: 2px; padding: 6px; border: 1px dotted #aaa; }
+	.share ul { list-style-type: none; margin: 0px; } 
+	.share li { display: inline; }
+
+	.permalink { text-align: center; font-size: 0.76em; margin: 2px; padding: 6px; border: 1px dotted #aaa; }
+	.permalink ul { list-style-type: none; margin: 0px; } 
+	.permalink li { display: inline; }
+	
+	.rss { text-align: right; }
+
+	.comments { font-size: 0.86em; margin: 10px; }
+	.comments h3 { font-size: 1.1em; }
+	.comments ul { list-style-type: none; margin: 0px; padding: 0px; }
+	.comments ul li { margin-bottom: 10px; border-bottom: 1px dotted #dcdcdc; }
+	.comments ul li .manage { text-align: right; }
+	.comments ul li .manage form { display:inline; }
+	.comments ul li:last-child { margin-bottom: 10px; border-bottom: 1px dotted #dcdcdc; }
+	.comments textarea { width:98%; }
+	.comments p label { float: left; width: 110px; margin-right: 25px; }
+	.comment { margin-top:10px; margin-left: 10px; }
+
+	.imported_item { padding:10px; border: 1px dotted #ccc; }
+	.imported_item .imported_body { font-style: italic; }
+	.imported_item .imported_metadata { font-size: 0.7em; }
+}

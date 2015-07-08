@@ -1,0 +1,108 @@
+/*
+// -----------------------------------------------------------------------
+// This file is part of AROUNDMe
+// 
+// Copyright (C) 2003-2008 Barnraiser
+// http://www.barnraiser.org/
+// info@barnraiser.org
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program; see the file COPYING.txt.  If not, see
+// <http://www.gnu.org/licenses/>
+// -----------------------------------------------------------------------
+*/
+
+body {
+	font-family:Verdana,Arial,Helvetica,sans-serif,"MS sans serif";
+	background-color:#fff;
+	font-size:80%;
+	font-weight:normal;
+	color:#000000;
+	margin:10px;
+	width:100%;
+}
+
+h2 {
+	margin:0px;
+	padding:5px 0px;
+	font-size:130%;
+}
+
+p {
+	margin:0px;
+	padding:5px 0px;
+}
+
+.topbox {
+	padding:10px;
+	border:1px solid #999;
+	width:100%;
+}
+
+.mainbox {
+	padding:10px;
+}
+
+
+a:link{
+	text-decoration:none;
+	font-size:100%;
+	color:#000099;
+}
+
+a:visited {
+	text-decoration:none;
+	font-size:100%;
+	color:#6666CC;
+}
+
+a:active {
+	text-decoration:none;
+	font-size:100%;
+	color:#000099;
+}
+
+a:hover {
+	font-size:100%;
+	color:#000099;
+	text-decoration:underline;
+}
+
+a.item:link {
+	font-weight:bold;
+}
+
+a.item:visited {
+	font-weight:bold;
+}
+
+a.item:active {
+	font-weight:bold;
+}
+
+a.item:hover {
+	font-weight:bold;
+}
+
+
+#item ul {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	border:none;
+}
+
+#item li {
+	margin:0;
+	padding:5px 0px;
+}

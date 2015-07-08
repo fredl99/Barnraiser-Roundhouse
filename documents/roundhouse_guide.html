@@ -1,0 +1,363 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en" />
+
+	
+	<title>Barnraiser</title>
+
+	
+	
+	<style type="text/css">
+	<!--
+	@import url(/theme/barnraiser/css/common.css);
+	@import url(/theme/barnraiser/css/roundhouse_guide.css);
+	-->
+	</style>
+
+	
+	<script type="text/javascript" src="/template/js/functions.js"></script>
+
+	<script type="text/javascript">
+	//<![CDATA[
+		var session_maxlifetime_ms = 107880000;
+
+		function ShowTimeoutWarning () {
+			// we append the time to the string to avoid caching
+			var urldate = new Date()
+			var urltime = urldate.getTime()
+			document.session_reload_image.src = '/get_file.php?reloadsession=start&now=' + urltime;
+			setTimeout( 'ShowTimeoutWarning();', session_maxlifetime_ms );
+		}
+	//]]>
+	</script>
+	
+	<link href="http://www.barnraiser.org/feed/rss.php" rel="alternate" type="application/rss+xml" title="RSS feed" />
+	<link rel="icon" href="/theme/barnraiser/img/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/theme/barnraiser/img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body onload="setTimeout( 'ShowTimeoutWarning();', session_maxlifetime_ms );">
+
+		<div style="display: none;">
+		Giving people the tools they need to share knowledge and advance open society through social software.	</div>
+		
+	<div id="content_container">
+		<div id="header_container">
+			
+			<p class="logo">
+				<a href="/view"><img src="/theme/barnraiser/img/logo.png" alt="Logo" border="0" /></a>
+			</p>
+			<ul>
+
+								<li><a href="/view">Home</a></li>
+
+								<li><a href="/about">About us</a></li>
+				
+								<li><a href="/software">Software</a></li>
+				
+								<li><a href="/donate">Donate</a></li>
+				
+				<li><a href="http://build.barnraiser.org/">Community</a></li>
+
+							</ul>	
+		</div>
+		<div style="clear:both;"></div>
+
+				
+		<div id="body_container">
+			<div id="col_left">
+	<a name="toc"></a>
+	<div class="box" id="box_contents">
+		<div class="box_header">
+			<h1>Contents</h1>
+		</div>
+
+		<div class="box_body">
+			<ol>
+				<li>Installation</li>
+				<ol>
+					<li><a href="#install_requirements">Requirements</a></li>
+					<li><a href="#install_procedure">Installation procedure</a></li>
+				</ol>
+				<li>Using Roundhouse</li>
+				<ol>
+					<li><a href="#user_registration">Registration</a></li>
+					<li><a href="#user_login">Logging in</a></li>
+					<li><a href="#user_account">Account screen</a></li>
+					<li><a href="#user_profile">Profile editor</a></li>
+				</ol>
+				
+				<li>Administering Roundhouse</li>
+				<ol>
+					<li><a href="#system_introduction">Introduction</a></li>
+					<li><a href="#system_management">System settings</a></li>
+					<li><a href="#account_management">Account administration</a></li>
+				</ol>
+				<li>Customising Roundhouse</li>
+				<ol>
+					<li><a href="#custom_introduction">Introduction</a></li>
+					<li><a href="#custom_themes">Themes</a></li>
+					<li><a href="#custom_templates">Templates</a></li>
+					<li><a href="#custom_language">Language support</a></li>
+				</ol>
+				<li>Appendix</li>
+				<ol style="list-style-type: upper-alpha">
+					<li><a href="#appendix_domains">Subdomain setup</a></li>
+					<li><a href="#appendix_log">Change log</a></li>
+					<li><a href="#appendix_log">Getting support</a></li>
+					<li><a href="#appendix_log">Contributing</a></li>
+				</ol>
+			</ol>
+		</div>
+	</div>
+</div>
+
+
+<div id="col_right">
+	<div class="box" id="box_guide">
+		<div class="box_header">
+			<h1>Roundhouse users guide</h1>
+		</div>
+
+		<div class="box_body">
+			<p>
+				Roundhouse is a lightweight social blogging tool. It is released under <a href="http://www.gnu.org/licenses/gpl.html" target="_new">The GNU General Public License</a> and maintained by <a href="http://tom.calthrop.info" target="_new">Tom Calthrop</a> at <a href="http://www.barnraiser.org" target="_new">Barnraiser</a>. For an overview of features please see the <a href="http://www.barnraiser.org/roundhouse">product page</a>.
+			</p>
+			
+			<h1>Installation</h1>
+			<p>
+				Roundhouse includes with it an installer. An understanding of domain name setup, FTP, changing directory privileges and web servers is required. Please read the terms of the license prior to installation.
+			</p>
+
+			<a name="install_requirements"></a>
+			<h2>Requirements</h2>
+			<p>
+				Roundhouse requires a web server running either Apache 1.3/2.x or IIS5/IIS6 with PHP5.x installed including GD library, Curl and BCMath. The installer does its best to detect these for you so if you are unsure simply proceed to installation.
+			</p>
+	
+			<p>
+				Roundhouse can be installed for a single user or for multiple users. For a single user you can use any domain name or subdomain (example www.example.org or tom.example.org). For multiple users you need a master domain or subdomain name (example example.org or id.example.org). Each user will get a subdomain as their OpenID (example tom.example.org or tom.id.example.org). Choose your installation requirement carefully before proceeding. More information on setting up domains and subdomains can be found in <a href="#appendix_domains">Appendix A</a>.
+			</p>
+			
+			<a name="install_procedure"></a>
+			<h2>Installation procedure</h2>
+			<p>
+				Download the latest release of Roundhouse and unzip/untar it onto your local computer. FTP all the files up a directory on your web server. Make a note of the path to the index.php file which will be something like "/public_html/roundhouse_20080920/roundhouse/". The above path will be used for all following examples.
+			</p>
+
+			<p>
+				Note: Please ensure the ".htaccess" file (a hidden file) is also copied up when you FTP.
+			</p>
+			
+			<p>
+				Point your domain name(s) to the directory which contains index.php. Change any permissions to allow PHP access to the scripts.
+			</p>
+			
+			<p>
+				Point your browser to your domain name and follow the instructions on screen.
+			</p>
+			
+			
+			
+			<h1>Using Roundhouse</h1>
+			<p>
+				If you are not the person who installed Roundhouse you will need to register.
+			</p>
+			
+			<a name="user_registration"></a>
+			<h2>Registration</h2>
+			<p>
+				Enter the main installation domain name into your browser. If registration is permitted you will see a registration button on the page. Click it and follow the instructions.
+			</p>
+			
+			<a name="user_login"></a>
+			<h2>Logging in</h2>
+			<p>
+				To log in to your account type your OpenID into a web browser. You will be directed to your OpenID account profile web page. At the base of the page click the "Manage" link. Type in your password to log in.
+			</p>
+			
+			<a name="user_account"></a>
+			<h2>Account screen</h2>
+			<p>
+				Once you are logged in you will see an "Account" link at the top of your web page. Press it. From the account page you can change your profile information, password and email address.
+			</p>
+			
+			<p>
+				Please note that the memorable date will be requested should you request a new password.
+			</p>
+			
+			<p>
+				You can upload a JPG, GIF or PNG picture to use for your profile picture.
+			</p>
+			
+			<a name="user_profile"></a>
+			<h2>Profile editor</h2>
+			<p>
+				Once you are logged in you will see an "Edit" link at the top of your web page. Press it. From the profile editor page you can change your masthead (the image at the top of the page), the title of your web page and the theme.
+			</p>
+			
+			<p>
+				You can add any content to your web page by typing it into the HTML box. This includes things like embedded YouTube movies. You can format your content using HTML. To learn more about HTML you can follow the <a href="http://www.w3schools.com/html/html_intro.asp" target="_new">w3schools tutorial</a>.
+			</p>
+			
+			<p>
+				You can style your HTML by using CSS. For an introduction to css visit the <a href="http://www.w3schools.com/css/css_intro.asp" target="_new">w3schools tutorial</a>.
+			</p>
+			
+			
+			<a name="system_introduction"></a>
+			<h1>Administering Roundhouse</h1>
+			<p>
+				Any account holder can be elevated to be a 'maintainer' (or administrator). As a maintainer they can send new passwords, add language packs and generally maintain the system. If you are a maintainer you will see an additional link at the top of your web page labelled 'Maintain'.
+			</p>
+			
+			<a name="system_management"></a>
+			<h2>System settings</h2>
+			<p>
+				From the maintain screen you can change the following system settings:
+			</p>
+
+			<h3>General</h3>
+			<ul>
+				<li><b>Allowable HTML tags</b><br />These are the HTML tags that you allow within the profile editor.</li>
+				<li><b>Language configuration</b><br />Roundhouse defaults to English. If you would like to overrule this by installing a language pack please visit the <a href="http://www.barnraiser.org/roundhouse">Roundhouse product page</a>, download the language pack and follow the instructions written within it.</li>
+			</ul>
+			
+			<h3>Multiuser only</h3>
+			<ul>
+				<li><b>Forbid certain OpenID account names</b><br />Unorthorized OpenID names are OpenID names that you do not allow. These are effectively subdomain names that you do not allow. This could include company branded names, offensive language or subdomains that you are using for an alternative purpose. Use a comma to separate each name.</li>
+				<li><b>Allow registration</b><br />If you want to allow visitors to register with your installation of Roundhouse the check the "allow registration" checkbox.</li>
+				<li><b>Maintainer configuration</b><br />Each account holder has an OpenID name (which is also the subdomain). You can give certain account holders permission to enter this maintain screen by adding them. Use a comma to separate each name.</li>
+				<li><b>Authorized email domains</b><br />You may want to setup Roundhouse to only allow registration from certain email domains such as example_company.com or example_organisation.org. You can limit registration to these by entering them. Leave the field blank to allow any email domain to register. Use a comma to separate each domain name.</li>
+			</ul>
+			
+			<a name="account_management"></a>
+			<h2>Account administration</h2>
+			<p>
+				If you have installed Roundhouse for multiple users you will see an account summary box on the maintain page. This displays a summary of accounts. 
+			</p>
+
+			<p>
+				An account has one of two states. Pending which indicated that the user has registered, but not clicked the link in the registration email yet, and Live which means the account is operational.
+			</p>
+
+			<p>
+				Press the "view accounts" link to list all accounts. Each account is listed with the OpenID name as a link. Select a user and press their OpenID name.
+			</p>
+
+			<p>
+				If the account is pending you will have the option to update their details and send them another confirmation email.
+			</p>
+
+			<p>
+				If the account is live you will have the option to update their details and send them an email containing a new password.
+			</p>
+			
+			<a name="custom_introduction"></a>
+			<h1>Customising Roundhouse</h1>
+			<p>
+				The GNU General Public License allows you to customise Roundhouse in anyway you like. We supply three standard approaches to help you acheive this; themes, templates and language packs.
+			</p>
+
+			<a name="custom_themes"></a>
+			<h2>Themes</h2>
+			<p>
+				A theme is a "style" or "look and feel" that a user can apply to their profile web page. Themes can be downloaded and copies into the "themes" directory. Roundhouse will automatically detect it and display it as an option in a users profile edit page.
+			</p>
+
+			<p>
+				The easiest way to customise a theme is to copy a current theme, rename it and edit the files within it. Each file is named after the page that it is used on. A common CSS file is used across each page. You can customise the theme using a combination of CSS and images.
+			</p>
+
+			<p>
+				You are welcome to put the theme as a zip or tar file on your website and include the same GPL license that we use for Roundhouse. If you do and you tell us we will add the theme to our list of available themes.
+			</p>
+			
+			<a name="custom_templates"></a>
+			<h2>Templates</h2>
+			<p>
+				The template is set and is not exchangeable by a user (unlike a theme is). The template can be edited by anyone with an understanding of HTML. The wrapper.tpl.php file builds the main top and bottom menus. A second template is inserted which displays the relevant page information. If you are going to edit a template backup your work first.
+			</p>
+
+			<a name="custom_language"></a>
+			<h2>Language support</h2>
+			<p>
+				To install another interface language download the relevant language pack from the <a href="http://www.barnraiser.org/roundhouse">Roundhouse product page</a> and follow the instructions located in the install.txt file.
+			</p>
+
+			<p>
+				Language packs are created using "gettext". If you want to create a language pack you can download a graphical user interface from http://www.poedit.net and follow their instructions to edit the language pack.
+			</p>
+
+			<p>
+				You are welcome to put the language pack as a zip or tar file on your website and include the same GPL license that we use for Roundhouse. If you do and you tell us we will add the language pack to our list of available language packs.
+			</p>
+			
+			<h1>Appendix</h1>
+			
+			<a name="appendix_domains"></a>
+			<h2>Subdomain setup</h2>
+			<p>
+				If you want to create an OpenID service you will need to be able to allocate any subdomain to a users account so for instance a user "tom" will be allocated "tom.example.org". This is called a "wildcard subdomain" and it means <any_name>.example.org gets directed to the Roundhouse installation.
+			</p>
+
+			<p>
+				You will only be able to use wildcard subdomains if you have full control over your webserver or if your Internet service provider allows it. If not, then you only perform a single user installation or manually set subdomains and ask users to register with an OpenID account that matches the name of your manually set subdomain.
+			</p>
+
+			<p>
+				Each Internet service provider has a different way to set up this. Look through your control panel and if in doubt contact your Internet service provider support team and ask them "How do I point http://example.org to /public_html/roundhouse_20080920/roundhouse/ "?
+			</p>
+
+			<p>
+				Once you have pointed all subdomains to the directory containing index.php test it by typing example.org and foo.example.org into your browser. Each should point to your directory. If they do not please ask your Internet service provider for assistance.
+			</p>
+			
+			<a name="appendix_log"></a>
+			<h2>Change log</h2>
+			<p>
+				Roundhouse will be available in CVS shortly
+			</p>
+			
+			<a name="appendix_log"></a>
+			<h2>Getting support</h2>
+			<p>
+				Please visit the <a href="http://build.barnraiser.org/network/roundhouse_support" target="_new">Roundhouse support network</a> in our <a href="http://build.barnraiser.org/" target="new">network</a> to submit any feedback on this document. This includes and tips and tricks you find that may help others in our community.
+			</p>
+			
+			<a name="appendix_log"></a>
+			<h2>Contributing</h2>
+			<p>
+				 Our goal is that Roundhouse remains lightweight and simple to use. If you have ideas that follow along these lines then please tell us by visiting our <a href="http://build.barnraiser.org/" target="new">network</a> and adding to our <a href="http://build.barnraiser.org/network/roundhouse_feedback" target="_new">Roundhouse feedback network</a>.
+			</p>
+		</div>
+
+		<div class="box_footer">
+			Last updated 11th September 2008 by <a href="http://tom.calthrop.info">Tom Calthrop</a>.
+		</div>
+	</div>
+</div>		</div>
+		
+		<div style="clear:both;"></div>
+		
+		<div id="footer_container">
+			<ul>
+				<li>This work is licensed under a <a href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a>.</li>
+								<li><a href="http://babelfish.altavista.com/?url=http%3A%2F%2Fwww.barnraiser.org%2Fview">Translate</a> this page.</li>
+								<li>Made with <a href="http://www.barnraiser.org/roundhouse">Roundhouse</a></li>
+								<li><a href="/manage">Manage</a></li>
+							</ul>
+		</div>
+		
+		<div style="clear:both;"></div>
+
+		<div id="id_session_reload_image">
+			<img name="session_reload_image" src="/get_file.php?reloadsession=1" alt="" />
+		</div>
+	</div>
+</body>
+</html>
