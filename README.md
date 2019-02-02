@@ -7,6 +7,8 @@ Today we know where that evolution led us and there's a tendency to move away fr
 
 Fortunately the latest versions of the projects are still available on their website. In order to preserve the code and hopefully help to adjust it to modern requirements I took the freedom to import them here. 
 
+This is the latest version roundhouse_20080929.tar.gz found at http://barnraiser.org/roundhouse.
+
 I'm not an experienced programmer, so there's not so much activity to be expected from my side. Much more this repository should be considerd as a base-camp for real coders who are able and willing to spend some time on these projects. I don't mind if they fork and develop on their own or ask for write-access to this repo. Although in the first case I would appreciate pull requests in order to keep the things together.
 
 The following is the original description of *Roundhouse*, taken from its homepage http://barnraiser.org/roundhouse
